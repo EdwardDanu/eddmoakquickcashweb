@@ -1,0 +1,433 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+
+/* Styling for layout.html */
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+}
+.navbar{
+  padding: .2rem;
+}
+.navbrand{
+  color: rgb(223, 8, 8);
+}
+.socialnav a {
+  font-size: 2em;
+  padding: 0.5rem;
+}
+.navbar-nav li {
+  padding: 5px;
+}
+.nav-link{
+  font-size: 1.1em !important;
+}
+.navbar-header {
+  float: left;
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+}
+.navbar-brand {float:none;}
+footer {
+  background-color: #3f3f3f;
+  color: #d5d5d5;
+  padding-top: 2rem;
+}
+hr.light {
+  border-top: 1px solid #d5d5d5;
+  width: 75%;
+  margin-top: .8rem;
+  margin-bottom: 1rem;
+}
+hr.light-100 {
+  border-top: 1px solid #d5d5d5;
+  width: 100%;
+  margin-top: .8rem;
+  margin-bottom: 1rem;
+}
+
+
+/* styling for register.html */
+
+.sizea{
+  width: 40%;
+}
+.advance {
+  color:brown;
+  font-weight: 400;
+  font-size: 150%;
+  margin-left: 1%;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+/* styling for index.html */
+.home {
+  display: block;}
+.carousel-inner img{
+  width: 100%;
+  height: 100%;
+}
+.carousel-caption{
+  position: absolute;
+  top: 20%;
+  transform: translateX(40%);
+}
+.carousel-caption h1 {
+  font-size: 200%;
+  font-weight: 400;
+  text-shadow: 1px 1px 15px rgb(153, 57, 57);
+  color:rgb(146, 29, 29);
+}
+.carousel-caption h6 {
+  font-size: 150%;
+  font-weight: 400;
+  text-shadow: 1px 1px 10px rgb(241, 175, 175);
+  padding-bottom: 0.2rem;
+  color:hsl(0, 25%, 94%);
+}
+.carousel-caption button {
+  border: 2px solid rgb(146, 29, 29);
+  margin-top: 1.5rem;
+}
+.btn-primary {
+  background-color: #6648b1;
+  border: 1px solid #6648b1;
+}
+.btn-primary:hover
+{
+  background-color: #563d7c;
+  border: 1px solid #563d7c;
+}
+.jumbotron {
+  padding: 1rem;
+  border-radius: 0;
+}
+.lead{display: block;}
+.padding {
+  padding-bottom: 2rem;
+}
+.fun {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.gif {
+  max-width: 100%;
+}
+.welcome {
+  width: 75%;
+  margin: 0 auto;
+  padding-top: 2rem;
+}
+.welcome hr {
+  border-top: 2px solid #b4b4b4;
+  width: 95%;
+  margin-top: .3rem;
+  margin-bottom: 1rem;
+}
+.card{display: block;}
+.card-img-top{display: block;}
+.card-body{display: block;}
+.card-title{display: block;}
+.card-text{display: block;}
+.fa-facebook {
+  color: #3b5998;
+}
+.fa-twitter {
+  color: #00aced;
+}
+.fa-google-plus-g {
+  color: #dd4b39;
+}
+.fa-instagram {
+  color: #517fa4;
+}
+.fa-youtube {
+  color: #bb0000;
+}
+.fa-facebook:hover, .fa-twitter:hover, .fa-google-plus-g:hover, .fa-instagram:hover, .fa-youtube:hover {
+  color: #d5d5d5;
+}
+.social a {
+  font-size: 4.5em;
+  padding: 3rem;
+}
+
+/* styling for New Loan*/
+.reg_form {
+  margin: auto;
+  justify-content: center;
+}
+.register {
+  justify-content: center;
+}
+.registerb {
+  justify-content: space-between;
+}
+.textforma {
+  width: 50%;
+  padding:7px;
+  border: 7px;
+  border-radius: 5px;
+  margin-top: 15px;
+  }
+.textformb{
+  width: 100%;
+  height: 60px;
+  padding:7px;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+.registerc {
+  justify-content:left
+}
+.checkform {
+ margin-left: 0;
+ margin-top: 15px;
+ margin-right: 10px;
+}
+.spacefield{
+  width: 100%;
+  padding: 0;
+  border: 0;
+  margin-top: 0;
+}
+input[type="text"][disabled]{
+  background-color: honeydew;
+  height:2px
+}
+input[type="text"][disabled][id="rcurrency"]{
+  background-color: honeydew;
+  height: 100%;
+  padding:7px;
+}
+.btn .btn-info{
+  width: 100%;
+}
+label{
+  margin-top: 10px;
+  font-weight: bolder;
+}
+.form-control {
+  margin-top: 20px; 
+}
+details > summary {
+  padding: 4px;
+  max-width: fit-content;
+  background-color: #eeeeee;
+  border: none;
+  box-shadow: 1px 1px 2px #bbbbbb;
+  cursor: pointer;
+}
+details > p {
+  background-color: #eeeeee;
+  padding: 4px;
+  margin: 0;
+  box-shadow: 1px 1px 2px #bbbbbb;
+}
+.imageform{
+  border: 2px solid rgb(146, 25, 25);
+  border-radius: 14px;
+  width: 100%;
+  padding: 4px;
+  margin-top: 15px;
+  margin-bottom: 1px;
+  }
+  .addimage{
+    color: #9e3737;
+    width: 100%;
+    text-align: center;
+    margin-top: 1px;
+    font-weight: 600;
+  }
+  div.imageform:hover .fa-file , div.imageform:hover .addimage, div.imageform:hover {
+    color: white;
+    background-color: rgb(165, 7, 7);
+    border: 1px solid rgb(131, 7, 7);
+  }
+  input[type="file"]{
+    display:none;
+  }
+
+  .fa-file-pdf{
+    color: #9e3737;
+    margin-right: 3px;
+  }
+  .submitform{
+    border-radius: 14px;
+    border: 2px solid rgb(162, 224, 162);
+    width: 100%;
+    margin-top: 10px;
+    padding:7px;
+    background-color: rgb(204, 233, 204);
+    width: 100%;
+  }
+.imagedisplay{  
+  width: 100px;
+  max-height: 200px;
+  display: inline;
+}
+.contentone{
+  max-width: 100px;
+  margin-top: 2px;
+  display: inline;
+}
+/* section for listing display */
+#buyiphone, #buysamsung, #buyhuawei, #phone{
+  display: none;
+}
+.listingcontainer{
+  position:relative;
+  padding:10px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  min-height: 120vh;
+}
+.sidebar{
+  border: 2px solid rgb(240, 240, 232);
+  border-radius: 10px;
+  position: absolute;
+  top:0; left:1;
+  width:200px;
+  max-height: 120vh;
+  overflow: auto;
+}
+.brand-item{
+  border-radius: 10px;
+  border: 2px solid rgb(123, 197, 123);
+  width: 100%;
+  margin-top: 0%;
+  margin-bottom: 1%;
+  padding: 1%;
+}
+.color-item{
+  border-radius: 10px;
+  border: 2px solid rgb(123, 197, 123);
+  width: 100%;
+  margin-top: 0%;
+  margin-bottom: 1%;
+  padding: 1%;
+}
+#buyiphonecontent, #buysamsungcontent, #buyhuaweicontent{
+  height: fit-content;
+  margin-left: 200px;
+  padding:10px; 
+}
+.listingimages {
+  object-fit: contain;
+  padding: 20px;
+  width: 250px;
+  max-height: 300px;
+  margin-bottom: 150px;
+}
+.infomation {
+  position: absolute;
+  margin-top: 300px;
+  margin-left: -200px;
+  margin-bottom: 20px;
+}
+.hrclass{
+  width: 200px;
+}
+.hiddenbrand{display: none;}
+
+/* section for buy single item display */
+.item_row{
+  height: fit-content;
+}
+.toclick{
+  border: 2px solid rgb(123, 197, 123);
+  border-radius: 10px;
+}
+.img_toggler{
+  object-fit: contain;
+  max-width: 100%;
+  margin:0px
+}
+.desc_section{
+  height: 100%;
+}
+.my-2{
+  background-color: coral;
+}
+.main_desc{
+  font-size: larger;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.cart_sec{
+  background-color: whitesmoke;
+  border: 1px solid coral;
+  border-radius: 10px;
+  height: fit-content;
+  margin-left: 50px;
+}
+.cart_innersec{
+  padding: 15px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-left: 10px;
+}
+.cart_button {
+  margin-bottom: 10px;
+  border-radius: 20px;
+}
+
+
+/* At media root css */
+@media (max-width: 992px ){
+  .social a {font-size: 4em;
+ padding: 2rem;
+ }
+ }
+ @media (max-width: 768px)
+ {
+   .carousel-caption{
+     top: 45%;
+   }
+   .carousel-caption h1 {
+     font-size: 350%;
+   }
+   .carousel-caption h3{
+     font-size: 140%;
+     font-weight: 400;
+     padding-bottom: .2rem;
+   }
+   .carousel-caption .btn {
+     font-size: 95%;
+     padding: 8px 14px;
+   }
+   .social a {
+     font-size: 2.5em;
+     padding: 1.2rem;
+     }
+ }
+ @media (max-width: 576px){
+   .carousel-caption{
+     top: 40%;
+   }
+   .carousel-caption h1 {
+     font-size: 250%;
+   }
+   .carousel-caption h3{
+     font-size: 110%;
+   }
+   .carousel-caption .btn {
+     font-size: 90%;
+     padding: 4px 8px;
+   }
+   .carousel-indicators{
+     display: none;
+   }
+   .display-4 {
+     font-size: 160%;
+     text-align: center;
+   }
+   .social a {
+     font-size: 2em;
+     padding: .7rem;
+     }
+   }
+

@@ -1,0 +1,81 @@
+{% extends "home/layout.html" %}
+{% load static %}
+{% block body %}
+  <br>
+  <center> <h3>Loan Application form summary!</h3> </center>
+  <br>
+  <center style="color: red;">Loan Application Reference: {{related_reference}}</center>
+  <br>
+  <br> 
+<form class="reg_form" action="{% url 'loansummary' %}" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="container-fluid">
+    <div class="row register">
+      <div class="col-md-4 col-xs-12">
+        <div class="form-group">
+          <h6>LOAN AMOUNT APPLIED</h6>
+          <h6>INTEREST RATE OF 10% PER MONTH</h6>
+          <h6>AMOUNT TO BE PAID</h6>
+          <h6>AMOUNT TO BE PAID IN WORDS</h6>
+        </div>
+      </div>
+      <div class="col-md-4 col-xs-12">
+        <div class="form-group">
+          <h6 >: {{amount}}</h6>
+          <h6 >: {{interest}}</h6>
+          <h6>: {{total_amount}}</h6>
+          <h6>: {{amount_in_words}}</h6>
+          <input name="amount" value="{{amount}}" hidden>
+          <input name="amount_in_words" value="{{amount_in_words}}" hidden>
+          <input name="reference" value="{{reference}}" hidden>
+        </div>
+      </div>
+    </div>
+    <div class="row register">
+      <div class="col-md-8 col-xs-12">
+          <details>
+          <summary style="color: red;">TERMS AND CONDITIONS!</summary>
+          <p>A.	INTEREST RATE is 10% PER MONTH OF AMOUNT BORROWED (REFER C BELOW FOR DEFAULT)</p>
+          <p>B.	Loan administration fee is charged on the loan amount borrowed and is payable upfront if borrower does not have the upfront application fee, it shall be deducted from loan amount. Interest is charged on the total loan amount borrowed.Loan administration fee is only applicable for loan amounts of more than AED 2000.00 only</p>
+          <p>C.	Failure to pay: If for any reason the Borrower does not make payment in the time stipulated as per this contract or Payment Plan (Debt Acknowledgement- Annexure 1), the debtor shall be held to be in default.Quick loaner Microfinance shall charge the borrower interest at the default rate of 15% per month calculated from the 2nd month from the date of borrowing</p>
+          <p>D.	Any payment made by the debtor shall first be applied towards the interest accrued and the balance thereof shall reduce capital loan advanced. Interest shall be capitalized on monthly basis.</p>
+          <p>E.	Payment: Payment shall be done through transfer or cash. In the event that no deduction has been effected through transfer or cash for whatever reason, the debtor will come and make cash payment to Quick loaner.</p>
+          <p>F.	Receipts: Debtors must get official electronic receipts for all cash payments from Quick loaner Microfinance</p>
+          <p>G.	Disclosure: Debtor must disclose other borrowing done from other Quick Loaner Microfinance branches. Any over indebtedness as a result of non-disclosures will not be the responsibility of Quick Loaner Microfinance.</p>
+          <p>H.	The borrower hereby expressly authorizes Quick loaner Microfinance to deduct funds from the borrowers bank account or directly from his or her employer or alternatively from the sale of the pledged security. By providing his/her banking details and name of employer and by signing this agreement the borrower has expressly authorizes Quick loaner to approach his/her bank/the employer to effect the said deduction and the bank/the employer shall be in no way liable for any loss occasioned by such payment</p>
+          <p>I.	Change of bank accounts/employer without notifying Quick Loaner microfinance does not stop quick loaner microfinance to recover its funds from the new bank account/employer</p>
+          <p>J.	In the event of any default, the debtor shall be responsible for all recovery costs including legal fees on an attorney- client scale together with collection commission at the rate of 15% of the collected amount</p>
+          <p>K.	Jurisdiction: In the event of any breach or any dispute relating to this loan agreement including an order for specific performance or declaratory order for the disposal of the pledged surety or goods, I specifically consent to the jurisdiction of the Court of First Instance sitting at Dubai or Magistrate court sitting in Harare to determine this matter depending on the current residency of the debtor</p>
+          <p>L.	Private treaty: I specifically authorize and unequivocally consent that in the event of default of payment as agreed then the pledged property shall be sold by private treaty for Quick loaner microfinance to recover its money together with interest and any other incidental costs including legal costs. I authorize Quick loaner the consent to keep any pledged documents and the right to stop any attempt to replace them by any means</p>
+          <p>M.	Loan payments may be by bank transfer to the client bank account or any other bank account nominated by client in writing. Quick loaner reserves the right to pay out any loan application in cash, bank transfer or any other electronic means, which transfers maybe made from any of Quick loaner micro finance bank accounts or its partnering company’s bank account</p>
+          </details>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row register">
+        <div class="col-md-8 col-xs-12">
+          <div class="row registerb">
+            <label for="password" class="border-danger textforma">I:</label> <label for="confirmpassword" class="border-danger textforma">Have pledged my:</label>
+            {{LoansummaryForm}} 
+            <p> which I legally own as collateral security or surety for the herein said loan and the estimated value of the collateral security shall be based on highest bidder. I agree that Quick Loaner Microfinance shall not be liable for any loss/misuse of information concerning or upon disposal of collateral security. I further agree that I shall not sell or replace the pledged surety. I have read and understood the terms and conditions contained in this agreement and agree to them.</p>
+            {% if message %} <center style="color: red;">{{ message }} </center>{% endif %}  
+          </div>
+          <div class="row registerc">
+            {{LoanackForm}} <label> I confirm that the information herein supplied by me is true and correct to the best of my knowledge </label>
+          </div>
+        </div>
+      </div>
+      </div>
+    <div class="form-group">
+      <div class="row register">
+        <div class="col-md-8 col-xs-12">
+            <input class="form-control btn btn-outline-success" type="submit" value="Register">
+          </div>
+        </div>
+      </div>
+  </div>
+</form>
+{% endblock %}
+{% block script %}
+    <script src="{% static 'home/registration.js'%}"></script>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "home/layout.html" %}
+{% load static %}
+{% block body %}
+  <br>
+  <center> <h3>Transfer Summary!</h3> </center>
+  
+  <br>
+  <br> 
+    {% if message %}
+        <div>{{ message }}</div>
+    {% endif %}
+  <div class="container-fluid">
+    <div class="row register">
+      <div class="col-md-8 col-xs-12">
+      <div class="row registerb">
+      <div class="col-md-5 col-xs-12">
+          <h3>Sender Details</h3>
+          <h5 style="color:red">Transaction Reference</h5>
+          <h6>Firstname</h6>
+          <h6>Lastname</h6>
+          <h6>Mobile Number</h6>
+          <h6>Currency</h6>
+          <h6>Amount</h6>
+          <h3>Receivers Details</h3>
+          <h6>Firstname</h6>
+          <h6>Lastname</h6>
+          <h6>Mobile Number</h6>
+          <h6>Currency</h6>
+          <h6>Amount</h6>
+      </div>
+      <div class="col-md-3 col-xs-12">
+          <h3><br></h3>
+          <h5 style="color:red">{{reference}}</h5>
+          <h6>{{sender_firstname}}</h6>
+          <h6>{{sender_lastname}}</h6>
+          <h6>{{sender_contact}}</h6>
+          <h6>{{sender_currency}}</h6>
+          <h6>{{sender_amount}}</h6>
+          <h3><br></h3>
+          <h6>{{receiver_firstname}}</h6>
+          <h6>{{receiver_lastname}}</h6>
+          <h6>{{receiver_contact}}</h6>
+          <h6>{{receiver_currency}}</h6>
+          <h6>{{receiver_amount}}</h6>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="form-group">
+      <div class="row register">
+        <div class="col-md-8 col-xs-12">
+            <input class="form-control btn btn-info" type="submit" value="{{status}}">
+          </div>
+        </div>
+      </div>
+  </div>
+{% endblock %}
+{% block script %}
+    <script src="{% static 'home/registration.js'%}"></script>
+{% endblock %}

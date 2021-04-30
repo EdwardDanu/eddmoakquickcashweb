@@ -1,0 +1,36 @@
+{% extends "home/layout.html" %}
+{% load static %}
+{% block body %}
+  <br>
+  <center><h3>Loan registration form!</h3></center>
+  <br>
+  <br> 
+    {% if message %}
+        <center style="color: red;">{{ message }}</center>
+    {% endif %}
+<form action="{% url 'newloan' %}" class="reg_form" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="container-fluid">
+    <div class="row register">
+      <div class="col-md-8 col-xs-12">
+        <div class="row registerb">
+          {{forms}} {{formset}}
+          <div class="imageform"><label for='files' class="addimage" id="formset"><i class="fas fa-file-pdf"></i> Documents </label></div>
+          <output id='result' class="imagedisplay"></output>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="form-group">
+      <div class="row register">
+        <div class="col-md-8 col-xs-12">
+            <input class="form-control btn btn-outline-success" type="submit" value="Register">
+          </div>
+        </div>
+      </div>
+    </div>
+</form>
+{% endblock %}
+{% block script %}
+    <script src="{% static 'home/registration.js'%}"></script>
+{% endblock %}

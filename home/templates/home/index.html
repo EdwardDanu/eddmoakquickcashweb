@@ -1,0 +1,176 @@
+{% extends "home/layout.html" %}
+{% load static %}
+{% block body %}
+  <div id="slides" class="carousel slide home" data-ride="carousel">
+    <ul class="carousel-indicators">
+      <li data-target="#slides" data-slide-to="0"class="active"></li>
+      <li data-target="#slides" data-slide-to="1"></li>
+      <li data-target="#slides" data-slide-to="2"></li>
+    </ul>
+    <div class="carousel-inner carousel-fade">
+        <div class="carousel-item active">
+            <img src = "{% static 'home/image/moneypic.jpg' %}">
+            <div class="carousel-caption">
+                <h1>Save more by borrowing from us</h1>
+                <h6>Plan and budget wisely with quickloaner</h6>
+                <h6>Don't pay extra cost in charges</h6>
+                <h6>Spread your expenditure easly with us</h6>
+                <a class="nav-link" href="{% url 'sendmoney'%}" ><button type="button" class="btn btn-outline-light btn-lg">Send Money Now</button></a>
+            </div>
+        </div>
+        <div class="carousel-item">
+          <img src = "{% static 'home/image/moneypic2.jpg' %}">
+        </div>
+        <div class="carousel-item">
+          <img src = "{% static 'home/image/moneypic3.jpg' %}">
+        </div>
+  </div>
+  </div>
+  <div class="container-fluid home">
+  <div class="row jumbotron">
+    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
+      <p class="lead">This is the home for amazing offers. The best place for you to access quick and cheap credit, 
+        or to remmit your savings back home without extra charges. Its time for you to do it wiser and better.</p>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
+        <a href="{% url 'newloan'%}"><button type="button" class="btn btn-outline-secondary btn-lg">Start Applying</button></a>
+    </div>
+  </div>  
+  </div>
+  <h1 style="text-align:center;" class="display-4 home"> Our pride </h1>
+  <div class="container-fluid padding home">
+  <div class="row text-center padding">
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <h3>Instant credit</h3>
+      <P>Think different</P>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <h3>Instant Transfer</h3>
+      <P>Inspire the World, Create the Future</P>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <h3>Instant delivery</h3>
+      <P>Make it Possible</P>
+    </div>
+  </div>
+  <hr class="my-2">
+  </div>
+  <div class="container-fluid padding home">
+  <div class="row padding">
+    <div class="col-md-12 col-lg-6">
+      <h2>If you built it ...</h2>
+      <p>Our versions of a life we love are as unique as we are. Even as we simultaneously appreciate all the we have or have 
+        done, we also want more. Sure, some of us get stuck or feel like we’re in a rut. But it’s not because we don’t want to 
+        grow or change; it’s usually because we aren’t sure how we can or even if we can.</p>
+      <br>
+      <a href="{% url 'newloan'%}" class="btn btn-primary">Try with us</a>
+    </div>
+    <div class="col-lg-6">
+      <img src = "{% static 'home/image/desk.png' %}" class="img-fluid">
+    </div>
+  </div>
+  </div>
+  <hr class="my-4">
+  <figure class="home">
+    <div class="fixed-wrap">
+      <div id="fixed">
+        <img src = "{% static 'home/image/mac.png' %}" class="img-fluid">
+      </div>
+    </div>
+  </figure>
+  <button class="fun home" data-toggle="collapse" data-target="#emoji"> Click for fun </button>
+  <div id="emoji" class="collapse home">
+  <div class="container-fluid padding home">
+  <div class="row text-center">
+      <div class="col-sm-6 col-md-3">
+        <img src = "{% static 'home/image/gif/panda.gif' %}" class="gif">
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <img src = "{% static 'home/image/gif/poo.gif' %}" class="gif">
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <img src = "{% static 'home/image/gif/unicorn.gif' %}" class="gif">
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <img src = "{% static 'home/image/gif/chicken.gif' %}" class="gif">
+      </div>
+  </div>
+  </div>
+  </div>
+  <div class="container-fluid padding home" hidden>
+  <div class="row welcome text-center">
+    <div class="col-12">
+      <hi class="display-4">Meet the team</hi>
+    </div>
+    <hr>
+  </div>
+  </div>
+  <div class="container-fluid padding home" hidden>
+  <div class="row padding">
+    <div class="col-md-4">
+      <div class="card">
+        <img src = "{% static 'home/image/team1.png' %}" class="card-img-top">
+        <div class="card-body">
+          <h4 class="card-title">Anesu</h4>
+          <p class="card-text">Gordon McKay Professor of the Practice of Computer Science
+            Harvard University Brian Yu Senior Preceptor in Computer Science
+            </p>
+            <a href="#" class="btn btn-outline-secondary">See profile</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <img src = "{% static 'home/image/team2.png' %}" class="card-img-top">
+        <div class="card-body">
+          <h4 class="card-title">Tanaka</h4>
+          <p class="card-text">Gordon McKay Professor of the Practice of Computer Science
+            Harvard University Brian Yu Senior Preceptor in Computer Science
+            </p>
+            <a href="#" class="btn btn-outline-secondary">See profile</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <img src = "{% static 'home/image/team3.png' %}" class="card-img-top">
+        <div class="card-body">
+          <h4 class="card-title">Blessing</h4>
+          <p class="card-text">Senior Preceptor in Computer Science
+            Harvard University
+            </p>
+            <a href="#" class="btn btn-outline-secondary">See profile</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="container-fluid padding home">
+  <div class="row padding">
+      <div class="col-md-12 col-lg-6">
+        <h2>Our philosophy</h2>
+        <p>Dont look for what you know, look for what is better</p>
+        <p>You can always reduce the cost, you can always minimise the expense, you can always increase your income, just find a way</p>
+        <br>
+      </div>
+      <div class="col-lg-6">
+        <img src = "{% static 'home/image/financial-philosophy.jpg' %}" class="img-fluid">
+      </div>
+    </div>
+    <hr class="my-4">
+    </div>
+    <div class="container-fluid padding home">
+    <div class="row text-center padding">
+      <div class="col-12">
+        <h2>Quicker</h2>
+      </div>
+      <div class="col-12 social padding">
+        <a href="https://www.facebook.com/quickloaner.microfinance"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/quickloaner"><i class="fab fa-twitter"></i></a>
+        <a href="mailto:quickloanermicrofinance@gmail.com"><i class="fab fa-google-plus-g"></i></i></a>
+        <a href="https://www.instagram.com/quickloanermicrofinance/"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/channel/UCHHGvzllHCtYRzDN-Tcp5pQ"><i class="fab fa-youtube"></i></a>
+      </div> 
+    </div>
+    </div>  
+{% endblock %}

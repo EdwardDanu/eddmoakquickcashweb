@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>connect</title>
+  <link href="{% static 'home/styles.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  {% block script %}
+  {% endblock %}
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'index' %}"><img src = "{% static 'home/image/loanbrand.png' %}"> 
+      <span class="navbrand">Quickloaner</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#navdropdown"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navdropdown">
+          <ul class="navbar-nav md-auto">
+            {% if user.is_authenticated %}
+            <li class="nav-item"><a class="nav-link" href="{% url 'newloan'%}" >New Loan</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'loanstatus'%}" >Loan Status</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'sendmoney'%}" >Quicksender</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'transferstatus'%}" >Transfer Status</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'logout'%}" >Log Out</a></li> 
+            {% else %}
+            <li class="nav-item"><a class="nav-link" href="{% url 'login' %}" >log in</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'register'%}">Register</a></li>
+            {% endif %}
+          </ul>
+          <ul class="nav navbar-nav ml-auto socialnav">
+            <li><a href="https://www.facebook.com/quickloaner.microfinance"><i class="fab fa-facebook"></i></a></li>
+            <li> <a href="https://twitter.com/quickloaner"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://wa.me/00971525086833?text=Hi there!! Thank you for reaching to us. We are a microfinance company in Zimbabwe and we offer collateral based credits to Zimbabweans at home and in UAE"><i class="fab fa-whatsapp"></i></a></li>
+            <li><a href="mailto:quickloanermicrofinance@gmail.com"><i class="fab fa-google-plus-g"></i></a></li> 
+            <li><a href="https://www.instagram.com/quickloanermicrofinance/"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+        </div>
+      </div>
+  </nav>
+  {% block body %}
+  {% endblock %}
+  <footer>
+    <div class="container-fluid padding">
+    <div class="row text-center">
+      <div class="col-md-4">
+        <img src = "{% static 'home/image/loanbrand.png' %}"> <span class="navbrand">Quickloaner</span>
+        <hr class="light">
+        <p>00263773788239</p>
+        <p>quickloanermicrofinance@gmail.com</p>
+        <p>29 speke Avenue </p>
+        <p>Harare, Harare, 00000</p>
+      </div>
+      <div class="col-md-4">
+        <hr class="light">
+        <h5>Our hours</h5>
+        <hr class="light">
+        <p>Monday- Friday : 9am - 6pm</p>
+        <p>Sartaday : 9am - 4pm</p>
+        <p>Sunday : Closed</p>
+      </div>
+      <div class="col-md-4">
+        <hr class="light">
+        <h5>Service Areas</h5>
+        <hr class="light">
+        <p>Harare, 00000</p>
+        <p>Bulawayo, 00000</p>
+        <p>Marondera, 00000</p>
+        <p>Mutare, 00000</p>
+      </div>
+      <div class="col-12">
+        <hr class="light-100">
+        <h5>&copy; quick.com</h5>
+      </div>
+    </div>
+    </div>
+  </footer>
+</body>
+</html>

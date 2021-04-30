@@ -1,0 +1,39 @@
+{% extends "home/layout.html" %}
+{% load static %}
+{% block body %}
+  <br>
+  <center> <h3>Loan Status summary!</h3> </center>
+  <br>
+  <br> 
+  <div class="container-fluid">
+    <div class="row register">
+      <div class="col-md-4 col-xs-12">
+        <div class="form-group">
+          <h5  style="color: red;">Transaction Reference</h5>
+          <h6>LOAN AMOUNT APPLIED</h6>
+          <h6>LOAN AMOUNT IN WORDS</h6>
+          <h6>INTEREST RATE OF 10% PER MONTH</h6>
+          <h6>AMOUNT TO BE PAID</h6>
+        </div>
+      </div>
+      <div class="col-md-4 col-xs-12">
+        <div class="form-group">
+          <h5 style="color: red;">:{{referenceb}}</h5>
+          <h6 >: {{amount}}</h6>
+          <h6>: {{amount_in_words}}</h6>
+          <h6 >: {{interest}}</h6>
+          <h6>: {{total_amount}}</h6>
+        </div>
+      </div>
+    </div>
+      <div class="form-group">
+        <div class="row register">
+          <div class="col-md-8 col-xs-12">
+              <input class="form-control btn btn-info" type="submit" value="{{status}}">
+            </div>
+          </div>
+    </div>
+{% endblock %}
+{% block script %}
+    <script src="{% static 'home/registration.js'%}"></script>
+{% endblock %}

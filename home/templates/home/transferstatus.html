@@ -1,0 +1,41 @@
+{% extends "home/layout.html" %}
+{% load static %}
+{% block body %}
+  <br>
+  <center><h3>Transfer Status form!</h3></center>
+  <br>
+  <br> 
+    {% if message %}
+        <center style="color:red">{{ message }}</center>
+    {% endif %}
+    <form class="reg_form" action="{% url 'transferstatus' %}" method="post">
+      {% csrf_token %}
+      <div class="container-fluid">
+        <div class="row register">
+          <div class="col-md-4 col-xs-12">
+            <h5>Sender Information</h5>
+            <div class="form-group">
+              <input class="form-control border border-primary " type="text" name="referenceb" placeholder="Transaction Reference">
+              <input class="form-control border border-primary " type="text" name="firstname" placeholder="Sender Firstname">
+            </div>
+          </div>
+          <div class="col-md-4 col-xs-12">
+            <div class="form-group"><br>
+              <input class="form-control border border-primary " type="text" name="amount" placeholder="Sent Amount">
+              <input class="form-control border border-primary" type="text" name="lastname" placeholder="Sender Lastname">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row register">
+            <div class="col-md-8 col-xs-12">
+                <input class="form-control btn btn-outline-success" type="submit" value="Search">
+              </div>
+            </div>
+          </div>
+      </div>
+    </form>
+{% endblock %}
+{% block script %}
+    <script src="{% static 'home/sendmoney.js'%}"></script>
+{% endblock %}
