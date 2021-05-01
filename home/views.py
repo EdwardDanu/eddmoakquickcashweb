@@ -65,7 +65,7 @@ def newloan(request):
     if request.method == "POST":
         form = NewLoanform(request.POST)
         formset = request.FILES.getlist('images')
-        if form.is_valid() and formset:
+        if form.is_valid():
             instance = form.save(commit=False)
             if instance.loanamount != instance.confirmamount:
                 form = NewLoanform()
