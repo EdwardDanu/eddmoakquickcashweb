@@ -8,6 +8,7 @@ Click==7.0
 cloud-init==20.2
 colorama==0.4.3
 command-not-found==0.3
+conda==4.3.16
 configobj==5.0.6
 constantly==15.1.0
 cryptography==2.8
@@ -46,6 +47,7 @@ ptyprocess==0.6.0
 pyasn1==0.4.2
 pyasn1-modules==0.2.1
 pycairo==1.20.0
+pycosat==0.6.3
 PyGObject==3.36.0
 PyHamcrest==1.9.0
 PyJWT==1.7.1
@@ -62,6 +64,8 @@ pytz==2021.1
 PyYAML==5.3.1
 requests==2.22.0
 requests-unixsocket==0.2.0
+ruamel.yaml==0.17.4
+ruamel.yaml.clib==0.2.2
 SecretStorage==2.3.1
 service-identity==18.1.0
 simplejson==3.16.0
