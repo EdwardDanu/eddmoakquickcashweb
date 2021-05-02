@@ -69,8 +69,8 @@ def newloan(request):
             instance = form.save(commit=False)
             if instance.loanamount != instance.confirmamount:
                 return render(request, "home/newloan.html", {
-                'forms': NewLoanform(),
-                'formset': ImageForm(),
+                'forms': NewLoanform,
+                'formset': ImageForm,
                 'message': "Please confirm Amount"})
             instance.status = "Loan Application Submitted"
             instance.save()
