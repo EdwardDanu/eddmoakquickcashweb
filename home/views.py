@@ -68,8 +68,6 @@ def newloan(request):
         if form.is_valid():
             instance = form.save(commit=False)
             if instance.loanamount != instance.confirmamount:
-                form = NewLoanform()
-                args['form'] = form
                 return render(request, "home/newloan.html", {
                 'forms': NewLoanform(),
                 'formset': ImageForm(),
