@@ -87,7 +87,7 @@ class SendmoneyForm(forms.ModelForm):
                   'localcontact':forms.NumberInput(attrs={'class': 'border border-primary textforma','placeholder': 'Local Contact Number'}),
                   'currency': forms.Select(choices = Currency, attrs={'class': 'border border-primary textforma', 'placeholder': 'Currency', 'id':'currency'}),
                   'amount' : forms.NumberInput(attrs={'class':'border border-primary textforma', 'placeholder': 'Amount', 'id':'amount'}),
-                  'uaeaddress' : forms.Textarea(attrs={'class': 'border border-primary textformb','placeholder': 'Receivers current Physical Address', 'height':'18' }),
+                  'uaeaddress' : forms.Textarea(attrs={'class': 'border border-primary textformb','placeholder': 'Senders current Physical Address', 'height':'18' }),
                   'referenceb': forms.TextInput(attrs={'class':'spacefield', 'autocomplete':'off', 'disabled':'True'}), 
                   'rfirstname': forms.TextInput(attrs={'class':'border border-primary textforma','placeholder': 'Firstname'}),
                   'rlastname' : forms.TextInput(attrs={'class':'border border-primary textforma', 'placeholder': 'Lastname'}), 

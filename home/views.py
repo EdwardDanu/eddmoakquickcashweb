@@ -74,20 +74,20 @@ def newloan(request):
                 'forms': NewLoanform(),
                 'formset': ImageForm(),
                 'message': "Please confirm Amount"})
+            instance.status = "Loan Application Submitted"
+            instance.save()
+            reference = instance.id
+            related_reference = f"LO{instance.firstname[0:3].upper()}{reference * 2}"
+            instance.referenceb = related_reference
+            instance.username = request.user.username
+            amount = float(instance.loanamount)
+            interest = float(0.10) * amount
+            total_amount = amount + interest
+            amount_in_words = instance.amountwords
+            instance.save()
             for image in formset:
                 mainpost = NewLoanImages(entry=instance, images=image)
-                instance.status = "Loan Application Submitted"
-                instance.save()
-                reference = instance.id
-                related_reference = f"LO{instance.firstname[0:3].upper()}{reference * 2}"
-                instance.referenceb = related_reference
-                instance.username = request.user.username
-                amount = float(instance.loanamount)
-                interest = float(0.10) * amount
-                total_amount = amount + interest
-                amount_in_words = instance.amountwords
                 mainpost.save()
-                instance.save()
             return render(request, "home/loansummary.html", {
                 'amount': amount,
                 'interest': interest,
@@ -157,23 +157,23 @@ def sendmoney(request):
         formset = request.FILES.getlist('images')
         if form.is_valid():
             instance = form.save(commit=False)
+            instance.space = "Transaction Inprocess"
+            if instance.currency == "AED":
+                instance.rcurrency = "USD"
+                instance.ramount = instance.amount / 3.66
+            else:
+                instance.rcurrency = "AED"
+                instance.ramount = instance.amount * 3.66
+            instance.save() 
+            ref = instance.id
+            related_reference = f"TR{instance.firstname[0:3].upper()}{ref * 2}"
+            instance.referenceb = related_reference
+            instance.username = request.user.username
+            instance.save()
             for image in formset:
                 sendimages = SendmoneyImages(entry=instance, images=image)
-                instance.space = "Transaction Inprocess"
-                if instance.currency == "AED":
-                    instance.rcurrency = "USD"
-                    instance.ramount = instance.amount / 3.66
-                else:
-                    instance.rcurrency = "AED"
-                    instance.ramount = instance.amount * 3.66
-                instance.save() 
-                ref = instance.id
-                related_reference = f"TR{instance.firstname[0:3].upper()}{ref * 2}"
-                instance.referenceb = related_reference
-                instance.username = request.user.username
-                instance.save()
                 sendimages.save()
-                return HttpResponseRedirect(reverse("sendsummary", kwargs={'name': related_reference }))
+            return HttpResponseRedirect(reverse("sendsummary", kwargs={'name': related_reference }))
         else:
             form = SendmoneyForm()
             args['form'] = form
