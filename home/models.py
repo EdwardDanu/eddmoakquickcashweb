@@ -44,6 +44,8 @@ class Newloan(models.Model):
             'accnumber':self.accnumber, 'country':self.country,'branch':self.branch, 'loanamount':self.loanamount,
             'confirmamount':self.confirmamount,'repperiod':self.repperiod,'loanpurpose':self.loanpurpose,'source':self.source,'monthlyincome':self.monthlyincome
             }
+  def __str__(self): 
+      return f"{self.username}"
 
 class LoanSummary(models.Model):
   fullname = models.CharField(max_length=50)
@@ -53,6 +55,9 @@ class LoanSummary(models.Model):
         return {
             "id": self.id, 'firstname': self.firstname, 'lastname':self.lastname
             }
+  def __str__(self): 
+      return f"{self.fullname}"
+
 class LoanackSummary(models.Model):
    acknowledgement = models.BooleanField(default=False)
    def serialize(self):
@@ -60,7 +65,9 @@ class LoanackSummary(models.Model):
 
 class NewLoanImages(models.Model):
   entry = models.ForeignKey(Newloan, default=None, on_delete=models.CASCADE, related_name="photoset")
-  images = models.FileField(upload_to='newloanimage', verbose_name='Image', max_length=254)            
+  images = models.FileField(upload_to='newloanimage', verbose_name='Image', max_length=254)
+  def __str__(self): 
+      return f"{self.entry.username}"            
 
 class Sendmoney(models.Model):
   firstname = models.CharField(max_length=50)
@@ -90,7 +97,11 @@ class Sendmoney(models.Model):
             'zimcontact':self.zimcontact, 'uaeaddress':self.uaeaddress,'bankname':self.bankname,
             'accnumber':self.accnumber,'loanamount':self.loanamount, 'confirmamount':self.confirmamount,
             }
+   def __str__(self):
+    return f"{self.username}"
 
 class SendmoneyImages(models.Model):
   entry = models.ForeignKey(Sendmoney, default=None, on_delete=models.CASCADE, related_name="photoset")
   images = models.FileField(upload_to='newloanimage', verbose_name='Image', max_length=254)
+  def __str__(self): 
+      return f"{self.entry.username}"
