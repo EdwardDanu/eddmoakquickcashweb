@@ -53,7 +53,7 @@ class ImageForm(forms.ModelForm):
    class Meta:
        model = NewLoanImages
        fields =["images"]
-       labels = {"images": "Upload Documents e.g id, passport, etc"}
+       labels = {"images": "Upload ID ,Passport, Collateral Asset/s (Color Copies)"}
        widgets = {'images':forms.FileInput(attrs={'class': 'custom-file','multiple': True,'id':'files'})}
 
 class LoansummaryForm(forms.ModelForm):
@@ -105,5 +105,5 @@ class SendImageForm(forms.ModelForm):
    class Meta:
        model = SendmoneyImages
        fields =["images"]
-       labels = {"images": "Upload Documents"}
+       labels = {"images": "Upload Sender's ID Copy"}
        widgets = {'images':forms.FileInput(attrs={'class': 'custom-file','multiple': True,'id':'files'})}
