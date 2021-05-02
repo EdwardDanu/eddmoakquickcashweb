@@ -146,7 +146,7 @@ def loansummary(request):
                  'amount_in_words': amount_in_words,
                  'LoansummaryForm' : loansummary,
                  'LoanackForm': loanack,
-                 'referenceb':referenceb,
+                 'referenceb':ref,
                  'message': "Agree to terms and conditions"
                  })
 @login_required(login_url='login')
