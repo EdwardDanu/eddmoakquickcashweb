@@ -97,8 +97,8 @@ class Sendmoney(models.Model):
             'zimcontact':self.zimcontact, 'uaeaddress':self.uaeaddress,'bankname':self.bankname,
             'accnumber':self.accnumber,'loanamount':self.loanamount, 'confirmamount':self.confirmamount,
             }
-   def __str__(self):
-    return f"{self.username}"
+  def __str__(self):
+        return f"{self.username}"
 
 class SendmoneyImages(models.Model):
   entry = models.ForeignKey(Sendmoney, default=None, on_delete=models.CASCADE, related_name="photoset")
