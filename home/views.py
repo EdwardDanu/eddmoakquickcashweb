@@ -116,7 +116,7 @@ def loansummary(request):
          loanack =LoanackForm(request.POST)
          amount_in_words = request.POST["amount_in_words"]
          amount = float(request.POST["amount"])
-         ref = int(request.POST["reference"])
+         ref = request.POST["reference"]
          if loansummary.is_valid() and loanack.is_valid():
              acknowledgement = loanack.cleaned_data["acknowledgement"]
              if acknowledgement == True:
