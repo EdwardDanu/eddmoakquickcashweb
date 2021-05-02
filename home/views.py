@@ -96,8 +96,6 @@ def newloan(request):
                 'related_reference':related_reference
                 })
         else:
-            form = NewLoanform()
-            args['form'] = form
             return render(request, "home/newloan.html", {
             'forms': NewLoanform(),
             'formset': ImageForm(),
