@@ -122,7 +122,7 @@ def loansummary(request):
              if acknowledgement == True:
                  loansummary.save()
                  loanack.save()
-                 entry = Newloan.objects.get(pk=ref)
+                 entry = Newloan.objects.get(referenceb=ref)
                  amount = entry.loanamount
                  interest = float(0.10) * amount
                  total_amount = amount + interest
