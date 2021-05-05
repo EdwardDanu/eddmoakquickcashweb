@@ -1,7 +1,8 @@
 from django.contrib import admin
-from .models import Newloan, NewLoanImages, LoanSummary, LoanackSummary, Sendmoney,SendmoneyImages
+from .models import User, Newloan, NewLoanImages, LoanSummary, LoanackSummary, Sendmoney,SendmoneyImages
 
 #Register your models here.
+admin.site.register(User)
 admin.site.register(Newloan)
 admin.site.register(NewLoanImages)
 admin.site.register(LoanSummary)
